@@ -27,7 +27,7 @@ var myVar; // assegno io il tipo numero
 // mi potrà accettare valori numerici
 myVar = 100; // accettato
 // myVar = "Stefano" // genera errore
-console.log(myName.toUpperCase()); // metodi disponibili sulle stringhe
+console.log(myName.includes("Ste")); // metodi disponibili sulle stringhe
 console.log(myVar.toString()); // metodi disponibili sui numeri
 // quali sono i tipi disponibili?
 // TIPI PRIMITIVI
@@ -54,16 +54,15 @@ var sayHello = function () {
 console.log(sayHello().toLowerCase()); // TS saprà esattamente qual è il tipo del valore in uscita dalla funzione, e mi suggerirà, ancora una volta,
 //  i metodi corretti e disponibili per quel dato
 // parametri che non specificano il tipo avranno un tipo implicito "any"
-var addition = function (n1, n2) {
-    if (typeof n1 === "number" && typeof n2 === "number") {
-        return n1 + n2;
-    }
-    else {
-        return "non hai passato due numeri";
-    }
-};
-console.log(addition(2, 3));
-console.log(addition("2", "3")); // non essendo specificati i tipi dei dati in ingresso (parametri) è permesso di passare qualsiasi dato come argomento
+// const addition = (n1, n2) => {
+//   if (typeof n1 === "number" && typeof n2 === "number") {
+//     return n1 + n2;
+//   } else {
+//     return "non hai passato due numeri";
+//   }
+// };
+// console.log(addition(2, 3));
+// console.log(addition("2", "3")); // non essendo specificati i tipi dei dati in ingresso (parametri) è permesso di passare qualsiasi dato come argomento
 // e sarà poi onere nostro gestire il codice all'interno della funzione
 // in questo caso, invece, andando preventivamente a dichiarare il tipo di dato ammissibile in input (parametri) non saranno ammessi valori diversi da quelli impostati
 var additionWithTS = function (n1, n2) {
